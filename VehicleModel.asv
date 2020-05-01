@@ -16,8 +16,8 @@ Lr = VehicleParams.Lr;
 delta = u(1);
 Fx = u(2);
 %TODO Fiala tire models.
-alphaF = atan((z(5)+Lf*z(6))/z(4)) - delta;
-alphaR = atan((z(5)-Lr*z(6))/z(4));
+alphaF = atan((z(5)+Lf*z(6))/(z(4)) - delta;
+alphaR = atan((z(5)-Lr*z(6))/(z(4));
 Fyf = 1;
 Fyr = 1;
 
