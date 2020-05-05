@@ -6,10 +6,9 @@ nz = length(z0);
 % number of inputs [longitudinal accel; steering angle]
 nu = 2;
 
-
+% Initialize yalmip variables
 z = sdpvar(nz, N+1);
 u = sdpvar(nu, N);
-
 
 % initial condition constraint
 constraints = z(:,1) == z0;

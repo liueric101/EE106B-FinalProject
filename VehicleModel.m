@@ -4,7 +4,7 @@ function [zOut] = VehicleModel(z,u,dt,VehicleParams)
 % z - 6x1 vector - states of the vehicle. 
 % [X, Y, psi, v_x, v_y, r]
 % [global X pos, global Y pos, global yaw angle, longitudinal velocity,
-% lateral velocity, yaw rate.
+% lateral velocity, yaw rate]
 % 
 % u - 2x1 vector - inputs to vehicle.
 % [delta, Fx] 
@@ -13,8 +13,11 @@ zOut = sdpvar(6,1);
 
 Lf = VehicleParams.Lf;
 Lr = VehicleParams.Lr;
+C = VehicleParams.C;
+B = VehicleParams.B;
 delta = u(1);
 Fx = u(2);
+
 %TODO Fiala tire models.
 alphaF = atan((z(5)+Lf*z(6))/z(4)) - delta;
 alphaR = atan((z(5)-Lr*z(6))/z(4));
